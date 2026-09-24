@@ -1,0 +1,7 @@
+#1
+git switch -c station-upgrade
+
+#2
+mkdir results
+
+#3

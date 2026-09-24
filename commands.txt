@@ -1,0 +1,22 @@
+#1
+git switch -c station-upgrade
+
+#2
+mkdir results
+
+#3
+touch results/summary.md
+echo "Analysis of the first field season." >> results/summary.md
+
+#4
+git add results
+git commit -m "Add results directory"
+
+#5
+mv data/sensor-readings.csv data/station-data.csv
+
+#6
+mkdir scripts/archive && cp scripts/*.py scripts/archive/
+ls scripts/archive
+
+#7
