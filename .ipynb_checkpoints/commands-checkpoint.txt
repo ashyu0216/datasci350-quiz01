@@ -6,7 +6,7 @@ mkdir results
 
 #3
 touch results/summary.md
-echo "Anlysis of the first field season." >> results/summary.md
+echo "Analysis of the first field season." >> results/summary.md
 
 #4
 git add results
