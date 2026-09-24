@@ -169,3 +169,12 @@ git add . && git commit -m "Update analyss"
 
 #17
 git commit --amend -m "Update analysis"
+
+#18
+git switch main
+git merge station-upgrade
+
+#19
+git log --oneline
+
+#20
