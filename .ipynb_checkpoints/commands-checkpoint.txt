@@ -5,3 +5,31 @@ git switch -c station-upgrade
 mkdir results
 
 #3
+touch results/summary.md
+echo "Analysis of the first field season." >> results/summary.md
+
+#4
+git add results
+git commit -m "Add results directory"
+
+#5
+mv data/sensor-readings.csv data/station-data.csv
+
+#6
+mkdir scripts/archive && cp scripts/*.py scripts/archive/
+
+#7
+rm docs/notes.md
+
+#8
+git add .
+git commit -m "Update station files"
+
+#9
+echo "temp/" >> .gitignore
+echo "log?.txt" >> .gitignore
+
+#10
+cat .gitignore
+
+#11
