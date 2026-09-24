@@ -6,7 +6,7 @@ mkdir results
 
 #3
 touch results/summary.md
-echo "Analysis of the first field season." >> results/summary.md
+echo "Anlysis of the first field season." >> results/summary.md
 
 #4
 git add results
@@ -26,8 +26,8 @@ git add .
 git commit -m "Update station files"
 
 #9
-echo "temp/" >> .gitignore
-echo "log?.txt" >> .gitignore
+echo "temp/">> .gitignore
+echo "log?.txt">> .gitignore
 
 #10
 cat .gitignore
@@ -36,13 +36,12 @@ cat .gitignore
 git add .gitignore && git commit -m "Add gitignore"
 
 #12
-touch log{1...4}.txt 
+touch log{1..4}.txt
 
 #13
 git status
 
 result:
-
 On branch station-upgrade
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -55,11 +54,13 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Explanation: The log files do not appear because they match the pattern log?.txt in .gitignore, where ? matches exactly one character, so Git ignores them.
 
 #14
-cat data/station-data.csv | wc -l >> results/summary.md
+cat data/station-data.csv | wc -l >>results/summary.md
 
 #15
-result: 
+nano scripts/03-plot.py
+git diff
 
+result:
 diff --git a/.ipynb_checkpoints/commands-checkpoint.txt b/.ipynb_checkpoints/commands-checkpoint.txt
 index 5d43e99..88a4ac0 100644
 --- a/.ipynb_checkpoints/commands-checkpoint.txt
@@ -171,10 +172,22 @@ git add . && git commit -m "Update analyss"
 git commit --amend -m "Update analysis"
 
 #18
+git add . && git commit -m "Update command log"
 git switch main
 git merge station-upgrade
 
 #19
 git log --oneline
 
+result:
+7215719 (HEAD -> main, station-upgrade) Update command log
+2598e01 Update analysis
+f66250e Add gitignore
+3feecb7 Update station files
+bcc5d8e Add results directory
+a22b29e (origin/main, origin/HEAD) docs(readme): note committing commands.txt before task 18 and force push for bonus 2
+b645f85 feat: quiz 01 starter files
+
 #20
+git add . && git commit -m "Add command log"
+git push
